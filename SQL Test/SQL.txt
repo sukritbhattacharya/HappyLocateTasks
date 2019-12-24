@@ -1,0 +1,54 @@
+Database Schema :-
+
+employees
+
+employee_id
+department_id
+boss_id	
+name
+salary
+
+departments
+
+department_id
+name
+
+Questions :-
+
+List employees (names) who have a bigger salary than their boss
+List employees who have the biggest salary in their departments
+List departments that have less than 3 people in it
+List all departments along with the number of people there
+List employees that don't have a boss in the same department
+List all departments along with the total salary there
+
+There are two tables employees and departments and they have those particular columns in the table. 
+You have to write the query of all the questions and send it back.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE `HappyLocate`.`employees` ( `employee_id` INT NOT NULL AUTO_INCREMENT , `department_id` INT NOT NULL , `boss_id` INT NOT NULL , `name` VARCHAR(100) NOT NULL , `salary` INT NOT NULL , PRIMARY KEY (`employee_id`)) ENGINE = InnoDB;
+
+1) SELECT employees.employee_id, employees.name FROM employees INNER JOIN boss ON employees.boss_id = boss.boss_id WHERE employees.salary>boss.salary
+2) SELECT employees.name AS 'Employee Name', departments.Name AS 'Department', employees.Salary AS 'Salary' FROM departments JOIN employees ON employees.department_id = departments.department_id GROUP BY departments.department_id ORDER BY employees.salary ASC
+3) SELECT departments.name AS 'Department' FROM departments JOIN employees ON employees.department_id = departments.Department_id GROUP BY departments.department_id HAVING COUNT(employees.employee_id) < 3
+4) SELECT departments.name AS 'Department Name', COUNT(*) AS 'No of Employees' FROM departments LEFT OUTER JOIN employees ON employees.department_id = departments.department_id GROUP BY departments.department_id, departments.name ORDER BY departments.name
+5) 
+6) SELECT departments.name AS 'Deptt.', SUM(employees.salary) AS 'Total Salary' FROM departments LEFT OUTER JOIN employees ON departments.department_id = employees.department_id GROUP BY departments.department_id
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+Article management system.
+
+These are the following things you should have in application.
+
+-> Dashboard => Dashboard will show your stats, graphs and other details.
+-> User => User menu you can create menu and show all the list of users which are present on your application.
+-> Category => You can add category and show the list of all the category which are present on your system.
+-> Article => This menu will show you the list of article which are present on your system and along with creation of articles.
+
+User, Article and Category in all you have to just do CRUD (Create, Read, Update, Delete) operations basically.
+
+Login Page should have normal credentials login as well as social login features.
+
+Frontend will made from Angular JS.
+Backend will made from Laravel.
+
+Incase of doubt/help just call/text me.
