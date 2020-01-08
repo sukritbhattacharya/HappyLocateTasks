@@ -40,7 +40,6 @@ function render() {
 	board.forEach(function(mark,index) {
 		squares[index].textContent = mark;
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
     };
 
  init();
